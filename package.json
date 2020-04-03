@@ -39,9 +39,7 @@
     "gulp-terser": "^1.2.0",
     "gulp-w3c-html-validator": "^2.0.0",
     "node-sass": "^4.13.1",
-    "stylelint": "^13.2.1"
-  },
-  "dependencies": {
+    "stylelint": "^13.2.1",
     "normalize.css": "^8.0.1"
   }
 }
