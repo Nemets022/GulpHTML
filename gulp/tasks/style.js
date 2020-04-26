@@ -9,7 +9,7 @@ module.exports = styles = (cd) => {
 	return gulp.src('src/styles/*.scss')
 		.pipe(sourceMap.init())
 		.pipe(sass().on('error', sass.logError))
-		.pipe(autoprefixer())
+		.pipe(autoprefixer({overrideBrowserslist: ['last 2 version', '> 2%', 'firefox 15', 'safari 5', 'ie 6', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']}))
 		.pipe(cleanCss())
 		.pipe(rename('style.min.css'))
 		.pipe(sourceMap.write('./maps'))
