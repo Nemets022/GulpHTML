@@ -5,6 +5,9 @@
 @import "../nullstyle/nullstyle";
 @import 'footer';
 @import 'header';
+body{
+	font-family: $font-family;
+}
 .imgf {
 	background-position: center;
 	background-size: cover;
