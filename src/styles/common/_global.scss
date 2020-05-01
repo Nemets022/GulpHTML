@@ -3,17 +3,22 @@
 @import "../mixins/fonts";
 @import "../variables/variables";
 @import "../nullstyle/nullstyle";
-@import 'footer';
-@import 'header';
-body{
+@import "footer";
+@import "header";
+body {
 	font-family: $font-family;
+}
+.container {
+	max-width: $container;
+	margin: 0 auto;
+	padding: 0 15px;
 }
 .imgf {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
-	>img {
+	> img {
 		width: 0;
 		height: 0;
 		position: absolute;
