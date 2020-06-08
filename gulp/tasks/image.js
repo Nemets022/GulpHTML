@@ -1,5 +1,5 @@
 const gulp = require('gulp')
-const image = require('gulp-image')
+const image = require('gulp-imagemin')
 const webp = require('gulp-webp')
 
 module.exports = imageTask = (cd) => {
