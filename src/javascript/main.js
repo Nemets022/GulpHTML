@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+sdocument.addEventListener('DOMContentLoaded', function () {
 	const imgFone = () => {
 		let imgf = document.querySelectorAll(".imgf"),
 			i = 0

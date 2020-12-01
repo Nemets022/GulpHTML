@@ -4,7 +4,6 @@ const autoprefixer = require('gulp-autoprefixer')
 const cleanCss = require('gulp-clean-css')
 const sourceMap = require('gulp-sourcemaps')
 const rename = require('gulp-rename')
-// const styleLint = require('gulp-stylelint')
 module.exports = styles = (cd) => {
 	return gulp.src('src/styles/*.scss')
 		.pipe(sourceMap.init())

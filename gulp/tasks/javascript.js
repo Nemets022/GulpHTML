@@ -1,19 +1,26 @@
 const gulp = require('gulp')
-const babel = require('gulp-babel')
-const terser = require('gulp-terser')
-const esLint = require('gulp-eslint')
 const rename = require('gulp-rename')
-const include = require('gulp-include')
+const webpack = require('webpack-stream')
 
 module.exports = javaScript = (cd) => {
 	return gulp.src('src/javascript/main.js')
-		.pipe(esLint())
-		.pipe(esLint.format())
-		.pipe(include())
-		.pipe(babel({
-			presets: ['@babel/env']
-		}))
-		.pipe(terser())
-		.pipe(rename({ suffix: '.min' }))
+		.pipe(webpack({
+			mode: 'production',
+			module: {
+				rules: [
+					{
+						test: /\.(js)$/,
+						exclude: /(node_modules)/,
+						loader: 'babel-loader',
+						query: {
+							presets: ['@babel/env']
+						}
+					}
+				]
+			}
+		})).on('error', function handleError() {
+			this.emit('end')
+		})
+		.pipe(rename('main.min.js'))
 		.pipe(gulp.dest('build/js'))
 }
